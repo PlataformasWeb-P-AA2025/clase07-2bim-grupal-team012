@@ -1,3 +1,4 @@
+from logging import Logger
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import RequestContext
@@ -19,6 +20,8 @@ from administrativo.models import *
 
 # importar los formularios de forms.py
 from administrativo.forms import *
+
+# importar logging
 
 # Create your views here.
 
@@ -191,12 +194,16 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
+import logging
+Logger = logging.getLogger(__name__)
+
 class EstudianteViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
+    Logger.warning("EstudianteViewSet")
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
     permission_classes = [permissions.IsAuthenticated]

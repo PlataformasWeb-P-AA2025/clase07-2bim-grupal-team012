@@ -21,7 +21,7 @@
       </li>
     </ul>
     <p v-else>No hay estudiantes registrados.</p>
-    <router-link to="/estudiantes/nuevo" class="add-button"
+    <router-link to="createEstudent" class="add-button"
       >Agregar Nuevo Estudiante</router-link
     >
   </div>
@@ -48,6 +48,7 @@ export default {
         this.loading = true;
         this.error = null;
         const response = await api.get("estudiantes/");
+        console.log("Response:", response);
         this.estudiantes = response.data.results || response.data;
         console.log("Estudiantes cargados:", this.estudiantes);
       } catch (err) {
