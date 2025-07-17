@@ -3,6 +3,10 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/estudiantes">Estudiantes</router-link>
+    <router-link to="/createTelefono">Crear Telefono</router-link>
+    <router-link to="/listarTelefonos">Listar Telefonos</router-link>
+    <router-link to="/deleteStudent">Eliminar Estudiante</router-link>
+    <router-link to="/deleteTelefono">Eliminar Telefono</router-link>
     <button v-if="isLoggedIn" @click="logout" class="logout-button">
       Salir
     </button>

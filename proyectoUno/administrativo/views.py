@@ -20,6 +20,8 @@ from administrativo.models import *
 
 # importar los formularios de forms.py
 from administrativo.forms import *
+import logging
+Logger = logging.getLogger(__name__)
 
 # importar logging
 
@@ -85,6 +87,7 @@ def obtener_estudiante(request, id):
 # @permission_required('administrativo.add_estudiante', )
 @permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def crear_estudiante(request):
+    Logger.warning("crear_estudianteeeeeeeeeeeeeeeeeeeeeee")
     """
     """
     if request.method=='POST':
@@ -194,8 +197,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
-import logging
-Logger = logging.getLogger(__name__)
+
 
 class EstudianteViewSet(viewsets.ModelViewSet):
     """

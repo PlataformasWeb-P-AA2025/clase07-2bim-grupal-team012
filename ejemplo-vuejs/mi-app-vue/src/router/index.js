@@ -4,7 +4,10 @@ import Login from "../views/Login.vue"; // Tu nuevo componente de login
 import EstudiantesList from "../views/EstudiantesList.vue"; // Tu nuevo componente de lista de estudiantes
 import EstudianteDetail from "../views/EstudianteDetail.vue"; // ¡Importa el nuevo componente!
 import createEstudent from "../views/createEstudent.vue";
-
+import createTelefono from "../views/createTelefono.vue";
+import listarTelefonos from "../views/listarTelefonos.vue";
+import deleteStudent from "../views/deletStudent.vue";
+import deleteTelefono from "../views/deletTelefono.vue";
 const routes = [
   {
     path: "/",
@@ -33,6 +36,30 @@ const routes = [
     path: "/createEstudent",
     name: "createEstudent",
     component: createEstudent,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/createTelefono",
+    name: "createTelefono",
+    component: createTelefono,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/listarTelefonos",
+    name: "listarTelefonos",
+    component: listarTelefonos,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/deleteStudent",
+    name: "deleteStudent",
+    component: deleteStudent,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/deleteTelefono",
+    name: "deleteTelefono",
+    component: deleteTelefono,
     meta: { requiresAuth: true },
   },
 ];
